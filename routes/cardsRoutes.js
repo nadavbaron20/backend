@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { getAllCards, getCardById, searchInCards, createNewCard, deleteCard, updateCard } = require('../controllers/cardsControllers');
+
 //  base path = "/api/cards"
 
 router.get('/', getAllCards)

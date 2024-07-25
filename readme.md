@@ -14,31 +14,32 @@ beckend api by nadav is a Node.js application skeleton for handling card-related
 - **cookie-parser**: Middleware to parse cookies 
 - **dotenv**: Environment variable management 
 - **morgan**: HTTP request logger
-
+- **chalk**: Colorful terminal output
+- **figlet**: ASCII art text,
 
 ## API Documentation 
 
-
 - **[Authentication API](https://documenter.getpostman.com/view/36490845/2sA3kXF1Ui)**: Comprehensive documentation for authentication endpoints. 
-
+**baseurl** http://127.0.0.1.3000/api/auth
+POST-register - baseurl/
+POST-login - baseurl/
+GET-get only login profile - baseurl/
 
 - **[Card API](https://documenter.getpostman.com/view/36490845/2sA3kXF1Km)**: Comprehensive documentation for authentication endpoints. 
-**baseurl** http://127.0.0.0.1.3000/api/cards
-GET-get all card- baseurl/
-
+**baseurl** http://127.0.0.1.3000/api/cards
+GET-get all cards- baseurl/
+GET-get card by id- baseurl/:id
+POST-search card by letter -baseurl/
+POST-create new card- baseurl/
+DELETE-delete card by id- baseurl/:id
+PATCH-update card by id- baseurl/:id
 
 - **[User API](https://documenter.getpostman.com/view/36490845/2sA3kXF1Z6)**: Detailed information about user-related endpoints.
-
-
-
-
-
-
-
-
-
-
-
+**baseurl** http://127.0.0.1.3000/api/users
+GET-get all cards only admin user login- baseurl/
+GET-get card by id only login user- baseurl/:id
+DELETE-delete card by id only admin user login- baseurl/:id
+PATCH-update card by id only login user- baseurl/:id
 
 
 ## Installation
@@ -51,4 +52,4 @@ GET-get all card- baseurl/
 
 ## License This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details. 
 
-## Contact For questions or support, please contact [nadavb@iscar.com](mailto:nadavb@iscar.com).
+## Contact For questions or support, please contact [nadavb@iscar.co.il](mailto:nadavb@iscar.co.il).

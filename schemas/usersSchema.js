@@ -1,8 +1,8 @@
 const Joi = require('joi')
 
 const validationOptions = {
-  stripUnknown:true,
-  abortEarly:false,
+  stripUnknown: true,
+  abortEarly: false,
 }
 
 const schemas = {
@@ -13,10 +13,9 @@ const schemas = {
         middle: Joi.string().optional().default(""),
         last: Joi.string().required(),
       }),
-      phone: Joi.string().pattern(/^05\d{1}([-]{0,1})\d{7}$/, { name: 'cellphone number'}).required(),
+      phone: Joi.string().pattern(/^05\d{1}([-]{0,1})\d{7}$/, { name: 'cellphone number' }).required(),
       email: Joi.string().email().required(),
-      // password rules: at least one upper case letter, at least one lower case letter, at least one number, at least one special characted, at least 7 characters total
-      password: Joi.string().pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{7,}$/, { name: 'password'}).required(),
+      password: Joi.string().pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{7,}$/, { name: 'password' }).required(),
       image: Joi.object().keys({
         url: Joi.string().uri().required(),
         alt: Joi.string().optional().default("Profile image"),
@@ -33,9 +32,8 @@ const schemas = {
     }).options(validationOptions),
   updateUser:
     Joi.object().keys({
-      phone: Joi.string().pattern(/^05\d{1}([-]{0,1})\d{7}$/, { name: 'cellphone number'}).optional(),
-      // password rules: at least one upper case letter, at least one lower case letter, at least one number, at least one special characted, at least 7 characters total
-      password: Joi.string().pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{7,}$/, { name: 'password'}).optional(),
+      phone: Joi.string().pattern(/^05\d{1}([-]{0,1})\d{7}$/, { name: 'cellphone number' }).optional(),
+      password: Joi.string().pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{7,}$/, { name: 'password' }).optional(),
       image: Joi.object().keys({
         url: Joi.string().uri().optional(),
         alt: Joi.string().optional().default("Profile image"),
@@ -52,8 +50,7 @@ const schemas = {
   login:
     Joi.object().keys({
       email: Joi.string().email().required(),
-      // password rules: at least one upper case letter, at least one lower case letter, at least one number, at least one special characted, at least 7 characters total
-      password: Joi.string().pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{7,}$/, { name: 'password'}).required(),
+      password: Joi.string().pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{7,}$/, { name: 'password' }).required(),
     }).options(validationOptions),
 }
 
